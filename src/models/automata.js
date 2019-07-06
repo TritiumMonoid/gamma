@@ -27,8 +27,12 @@ function advance(automaton, state, input) {
   }
 }
 
-function transitionsFrom(automaton, state) {
+function inputsFrom(automaton, state) {
   return Object.keys(transition(automaton, state));
+}
+
+function statesFrom(automaton, state) {
+  return Object.values(transition(automaton, state));
 }
 
 function isStart(automaton, state) {
@@ -57,7 +61,8 @@ module.exports = {
   transitions,
   transition,
   advance,
-  transitionsFrom,
+  inputsFrom,
+  statesFrom,
   isStart,
   isAccepted
 };
