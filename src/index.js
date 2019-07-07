@@ -1,6 +1,5 @@
-const { play } = require("./models/game");
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
+import Gamma from "./components/gamma.jsx";
 
-let state = play("start", "rock");
-console.log(state);
-state = play(state, "rock");
-console.log(state);
+ReactDOM.render(<Gamma />, document.getElementById("gamma"));

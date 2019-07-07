@@ -4,7 +4,8 @@
   "description": "A Rock-Paper-Scissors automata.",
   "main": "src/index.js",
   "scripts": {
-    "test": "mocha tests"
+    "test": "mocha tests",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -13,7 +14,6 @@
   "keywords": [
     "automata",
     "case-based-reasoning",
-    "trie",
     "rock-paper-scissors",
     "anime"
   ],
@@ -24,11 +24,19 @@
   },
   "homepage": "https://github.com/PaperMonoid/gamma#readme",
   "devDependencies": {
+    "@babel/core": "^7.5.0",
+    "@babel/preset-env": "^7.5.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
     "chai": "^4.2.0",
-    "mocha": "^6.1.4"
+    "mocha": "^6.1.4",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
   },
   "dependencies": {
     "localforage": "^1.7.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "uuid": "^3.3.2"
   }
 }
