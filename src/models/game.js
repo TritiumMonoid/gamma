@@ -1,4 +1,4 @@
-const { isAccepted, advance } = require("./automata.js");
+const { isAccepting, advance } = require("./automata.js");
 
 const automaton = {
   start: "start",
@@ -35,7 +35,7 @@ function play(state, input) {
 }
 
 function isResult(state) {
-  return isAccepted(automaton, state);
+  return isAccepting(automaton, state);
 }
 
 module.exports = { play, isResult };

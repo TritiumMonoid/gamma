@@ -46,7 +46,7 @@ function isStart(automaton, state) {
   }
 }
 
-function isAccepted(automaton, state) {
+function isAccepting(automaton, state) {
   if (automaton == null) {
     throw new Error("Null automaton");
   }
@@ -64,5 +64,5 @@ module.exports = {
   inputsFrom,
   statesFrom,
   isStart,
-  isAccepted
+  isAccepting
 };

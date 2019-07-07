@@ -24,30 +24,30 @@ describe("automata", function() {
     });
   });
 
-  describe("isAccepted()", function() {
+  describe("isAccepting()", function() {
     const automaton = {
       accepting: ["q3", "q4"]
     };
 
     it("should fail on null automaton", function() {
       assert.throws(function() {
-        automata.isAccepted(null, "q3");
+        automata.isAccepting(null, "q3");
       }, "Null automaton");
     });
 
     it("should fail on invalid automaton", function() {
       assert.throws(function() {
-        automata.isAccepted({}, "q3");
+        automata.isAccepting({}, "q3");
       }, "Invalid automaton");
     });
 
     it("should identify accepted states", function() {
-      assert.isTrue(automata.isAccepted(automaton, "q3"));
-      assert.isTrue(automata.isAccepted(automaton, "q4"));
+      assert.isTrue(automata.isAccepting(automaton, "q3"));
+      assert.isTrue(automata.isAccepting(automaton, "q4"));
     });
 
     it("should not identify not accepted states", function() {
-      assert.isFalse(automata.isAccepted(automaton, "q5"));
+      assert.isFalse(automata.isAccepting(automaton, "q5"));
     });
   });
 
