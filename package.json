@@ -24,19 +24,19 @@
   },
   "homepage": "https://github.com/PaperMonoid/gamma#readme",
   "devDependencies": {
-    "@babel/core": "^7.5.4",
-    "@babel/preset-env": "^7.5.4",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "chai": "^4.2.0",
-    "mocha": "^6.1.4",
-    "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.6"
+    "mocha": "^6.2.0",
+    "webpack": "^4.39.2",
+    "webpack-cli": "^3.3.7"
   },
   "dependencies": {
     "localforage": "^1.7.3",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "uuid": "^3.3.2"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "uuid": "^3.3.3"
   }
 }
