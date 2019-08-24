@@ -1,12 +1,5 @@
 const { play } = require("./game");
-
-function match(pattern, string) {
-  return [...string.matchAll(new RegExp(pattern))];
-}
-
-function matchTimes(pattern, times, string) {
-  return match(`(${pattern}){${times}}`, string);
-}
+const { match, repeat } = require("./regex");
 
 function sameLength(length) {
   return function(match) {
@@ -46,7 +39,7 @@ function getInput(inputs) {
 
 function winCount(wins, games, inputs) {
   const outcomes = inputsToOutcomes(inputs);
-  return matchTimes("(L|T)?W(L|T)?", wins, outcomes)
+  return match(repeat("(L|T)?W(L|T)?", wins), outcomes)
     .filter(sameLength(games))
     .map(matchEndIndex)
     .map(outcomeIndexToInputIndex)
@@ -56,7 +49,7 @@ function winCount(wins, games, inputs) {
 
 function notLoseCount(notLoses, games, inputs) {
   const outcomes = inputsToOutcomes(inputs);
-  return matchTimes("(L|T)?(W|T)(L|T)?", notLoses, outcomes)
+  return match(repeat("(L|T)?(W|T)(L|T)?", notLoses), outcomes)
     .filter(sameLength(games))
     .map(matchEndIndex)
     .map(outcomeIndexToInputIndex)
@@ -90,9 +83,3 @@ function sameInputs(expected, inputs) {
     .map(nextInputIndex)
     .map(getInput(inputs));
 }
-
-module.exports = {
-  winCount,
-  notLoseCount,
-  sameOutcomes
-};
